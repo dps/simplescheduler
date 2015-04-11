@@ -36,4 +36,4 @@ def main():
                               scheduler.get_running_scheduler_id(),
                               args.interval * 2])
         scheduler.schedule(keepalive, long(time.time() * 1000000))
-    scheduler.run()
+    scheduler._run()
