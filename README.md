@@ -12,7 +12,8 @@ $ redis-server
 To run jobs later, you don't have to do anything special, just define
 your typically lengthy or blocking function:
 
-```python myfile.py
+```python
+myfile.py
 
 def job(message):
     print 'job done: %s' % message
@@ -35,7 +36,7 @@ To start executing scheduled function calls in the background, set environment v
 
 ```console
 $ export REDIS_HOST=localhost
-$ export REDIS_PORT=localhost
+$ export REDIS_PORT=6397
 $ export REDIS_DB=0
 $ export REDIS_KEY=
 
