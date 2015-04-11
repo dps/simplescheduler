@@ -4,7 +4,10 @@ from .scheduler import Job, Scheduler
 from .version import VERSION
 __version__ = VERSION
 
-parser = argparse.ArgumentParser(description='SimpleScheduler')
+parser = argparse.ArgumentParser(description='''SimpleScheduler
+    redis parameters will be read from environment variables:
+    REDIS_HOST, REDIS_PORT, REDIS_DB, REDIS_KEY (password)    
+    ''')
 parser.add_argument('--interval',
                     type=int,
                     default=5,
@@ -21,7 +24,7 @@ parser.add_argument('--keepalive',
 def main():
     """ SimpleScheduler
     redis parameters will be read from environment variables:
-    REDIS_HOST, REDIS_PORT,REDIS_DB,REDIS_KEY (password)
+    REDIS_HOST, REDIS_PORT, REDIS_DB, REDIS_KEY (password)
     """
     args = parser.parse_args()
 
