@@ -11,6 +11,6 @@ install:
 script:
   - pwd
   - find .
-  - py.test --cov simplescheduler
+  - py.test --cov simplescheduler tests/
 after_success:
   - coveralls
