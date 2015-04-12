@@ -1,5 +1,9 @@
 # simplescheduler
-A simple task scheduler using redis for python 
+A simple task scheduler using redis for python.
+
+I have tried some of the more popular task schedulers for python, including rq + rqscheduler and apscheduler but had problems making them work reliably in production.
+
+Simple scheduler is simple.  It's dumb.  But it works, and it's so simple that if it does go wrong, you can probably debug it yourself.
 
 ## Getting started
 
@@ -9,11 +13,10 @@ First, run a Redis server:
 $ redis-server
 ```
 
-To run jobs later, you don't have to do anything special, just define
-your typically lengthy or blocking function:
+To run jobs later, just define your blocking function:
 
 ```python
-myfile.py
+in myfile.py
 
 def job(message):
     print 'job done: %s' % message
@@ -25,7 +28,7 @@ Then, create a job, scheduler instance and schedule the job:
 from datetime import timedelta
 from simplescheduler import Job, Scheduler
 
-j = Job('myfile.job', 'foo')
+j = Job('myfile.job', ['example parameter'])
 s = Scheduler()
 s.schedule_in(j, timedelta(hours=1))
 ```
