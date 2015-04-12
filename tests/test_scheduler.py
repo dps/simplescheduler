@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 from simplescheduler import Scheduler, Job
 
 from datetime import timedelta
@@ -96,14 +97,14 @@ class SchedulerUnitTests(unittest.TestCase):
 		s = Scheduler(custom_redis=self.fake_redis,
 					  clock_source=self.clock_source,
 					  sleeper=self.sleeper)
-		job = Job('test_scheduler.job1')
+		job = Job('tests.test_scheduler.job1')
 		s.schedule_now(job)
 		self.secs = 1
-		j2 = Job('test_scheduler.job2')
+		j2 = Job('tests.test_scheduler.job2')
 		s.schedule_now(j2)
-		j3 = Job('test_scheduler.job3')
+		j3 = Job('tests.test_scheduler.job3')
 		s.schedule_in(j3, timedelta(seconds=5))
-		j4 = Job('test_scheduler.job4')
+		j4 = Job('tests.test_scheduler.job4')
 		s.schedule(j4, 60 * 1e6)
 
 		self.secs = 2
