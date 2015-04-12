@@ -9,8 +9,6 @@ install:
   - pip install pytest-cov --use-mirrors
   - pip install coveralls --use-mirrors
 script:
-  - pwd
-  - find .
   - py.test --cov simplescheduler tests/
 after_success:
   - coveralls
