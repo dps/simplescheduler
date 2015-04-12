@@ -1,3 +1,4 @@
+sudo: false
 language: python
 services:
   - redis
@@ -8,6 +9,8 @@ install:
   - pip install pytest-cov --use-mirrors
   - pip install coveralls --use-mirrors
 script:
+  - pwd
+  - find .
   - py.test --cov simplescheduler
 after_success:
   - coveralls
