@@ -1,4 +1,6 @@
 # simplescheduler
+[![Build status](https://travis-ci.org/dps/simplescheduler.svg?branch=master)](https://secure.travis-ci.org/dps/simplescheduler)
+
 A simple task scheduler using redis for python.
 
 I have tried some of the more popular task schedulers for python, including rq + rqscheduler and apscheduler but had problems making them work reliably in production.
