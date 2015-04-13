@@ -11,4 +11,4 @@ install:
 script:
   - py.test --cov simplescheduler tests/
 after_success:
-  - coveralls
+  - coveralls debug
